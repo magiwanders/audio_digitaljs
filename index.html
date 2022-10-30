@@ -1,11 +1,31 @@
 <head>
   <script src="./index.js"></script>
+  <script src="./js_builds_html/html_builders.js"></script>
+  <script src="./simple_hardware_editor_and_simulator/digitaljs_webpack_backup.js"></script>
+  <script src="./simple_hardware_editor_and_simulator/lz-string_backup.js"></script>
+  <script src="./simple_hardware_editor_and_simulator/chips.js"></script>
+  <!-- <script src="./simple_hardware_editor_and_simulator/tester.js"></script> -->
+  <script src="./simple_hardware_editor_and_simulator/sheas_functions.js"></script>
+  <script src="./simple_hardware_editor_and_simulator/sheas_builders.js"></script>
 </head>
 
 
 
 <body>
-  <canvas id="cvs"
+  FFT size: <select id="FFT" onchange="buildAudio()">
+    <option value="32">32</option>
+    <option value="64">64</option>
+    <option value="128">128</option>
+    <option value="256">256</option>
+    <option value="512">512</option>
+    <option value="1024">1024</option>
+    <option value="2048">2048</option>
+  </select> <br>
+  <canvas id="audio"
+          width=64
+          height=300
+          style="border: 1px solid black"></canvas>
+  <canvas id="fft"
           width=64
           height=300
           style="border: 1px solid black"></canvas>

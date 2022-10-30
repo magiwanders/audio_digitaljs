@@ -1,0 +1,6 @@
+[submodule "simple_hardware_editor_and_simulator"]
+	path = simple_hardware_editor_and_simulator
+	url = https://github.com/magiwanders/simple_hardware_editor_and_simulator.git
+[submodule "js_builds_html"]
+	path = js_builds_html
+	url = https://github.com/magiwanders/js_builds_html.git
