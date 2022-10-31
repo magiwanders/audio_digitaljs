@@ -50,19 +50,13 @@ function dsp() {
     var samples = new Float32Array(data.numberOfFrames);
     data.copyTo(samples, {planeIndex: 0, format});
     /////////////////////// FIXED 480 samples at a time on 16 DigitalJS nodes
-    console.log(samples.length)
-    console.log(data.sampleRate)
+    // console.log(samples.length)
+    // console.log(data.sampleRate)
+    // Mock functions
     for (let i = 0; i < 16; i++) {
-      // samples[i] = lastValue;
-      // if (samples[i]>0.1) {
-      //     samples[i] = 0.1
-      // }
-      // for (let j = 0; j < 30; j++)
       inputCells[i].setInput(d3vl.read('dec', (parseInt(samples[i*30]*127)+128).toString(), 8))
     }
-
     for (let i = 0; i < 16; i++) {
-      // for (let j = 0; j < 30; j++)
       samples[i*30] = (circuit['sheas_container'].getOutputCells()[i].get('inputSignals').in.toNumber()-128)/127
     }
     ///////////////////////
